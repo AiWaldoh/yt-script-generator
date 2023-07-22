@@ -1,16 +1,17 @@
+import langchain
 from langchain.chains import LLMChain, SequentialChain
 from langchain.prompts import PromptTemplate
-from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.utilities import WikipediaAPIWrapper
 
 import streamlit as st
 
 import os
-from apikey import apikey 
+from apikey import apikey
 os.environ['OPENAI_API_KEY'] = apikey
 
-st.title(" AI GPT Creator")
+st.title("AI GPT Creator")
 
 prompt = st.text_input('Plug in your prompt here')
 
@@ -26,11 +27,11 @@ script_template = PromptTemplate(
 )
 
 #memory
-title_memory = ConversationBufferMemory(input_key='topic', memory_key='chat_history')
-script_memory = ConversationBufferMemory(input_key='title', memory_key='chat_history')
+title_memory = ConversationBufferMemory(input_key='topic', memory_key='chat_history', max_length=5)
+script_memory = ConversationBufferMemory(input_key='title', memory_key='chat_history', max_length=5)
 
 
-llm = OpenAI(temperature=0.9)
+llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", temperature=0.9)
 title_chain = LLMChain(llm=llm, prompt=title_template, verbose=True, output_key='title', memory=title_memory)
 script_chain = LLMChain(llm=llm, prompt=script_template, verbose=True, output_key='script', memory=script_memory)
 
