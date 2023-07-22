@@ -1,3 +1,3 @@
-#AI GPT Creator
+# AI GPT Creator
 
-##This repository hosts an AI application built using the OpenAI language model (LLM) to generate YouTube video titles and scripts based on a given topic. The AI uses language chain logic from the langchain library, which is an abstraction layer over Language Models (LMs). This project uses a Language Logic Model (LLM) to sequence and manage multiple language models. The application uses streamlit to create a user-friendly web application.
+## This repository hosts an AI application built using the OpenAI language model (LLM) to generate YouTube video titles and scripts based on a given topic. The AI uses language chain logic from the langchain library, which is an abstraction layer over Language Models (LMs). This project uses a Language Logic Model (LLM) to sequence and manage multiple language models. The application uses streamlit to create a user-friendly web application.
