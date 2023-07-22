@@ -10,7 +10,7 @@ import os
 from apikey import apikey 
 os.environ['OPENAI_API_KEY'] = apikey
 
-st.title(" 🧜🏽‍♀️🧜🏽‍♀️🧜🏽‍♀️ AI GPT Creator 🧜🏽‍♀️🧜🏽‍♀️🧜🏽‍♀️")
+st.title(" AI GPT Creator")
 
 prompt = st.text_input('Plug in your prompt here')
 
